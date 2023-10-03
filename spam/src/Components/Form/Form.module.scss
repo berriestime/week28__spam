@@ -1,0 +1,20 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.viewer {
+    height: 35em;
+    border: 1px solid #000000;
+    margin-top: 5em;
+}
+
+.highlight {
+    background-color: rgb(237, 237, 237);
+}

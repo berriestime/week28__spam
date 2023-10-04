@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Form.module.scss";
-// import TextInput from "./../Input/Input.js";
-// import MessageViewer from "./../MessageViewer/MessageViewer.js";
+import MessageViewer from "../MessageViewer/MessageViewer";
+import TextInput from "../TextInput/TextInput.js";
 
 function Form() {
   const [messages, setMessages] = useState([]);
@@ -21,19 +21,12 @@ function Form() {
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
-        <div className={styles.viewer}>
-          {messages.map((message, index) => (
-            <p key={index} className={index === 0 ? styles.highlight : ""}>
-              {message}
-            </p>
-          ))}
-        </div>
-        <input
-          type="text"
-          value={currentMessage}
-          onChange={handleMessageChange}
+        <MessageViewer messages={messages} />
+        <TextInput
+          currentMessage={currentMessage}
+          handleMessageChange={handleMessageChange}
+          handleSendMessage={handleSendMessage}
         />
-        <button onClick={handleSendMessage}>Send</button>
       </div>
     </div>
   );
